@@ -12,6 +12,7 @@ int main() {
     printf("Ini nilai y / x : %d \n", y/x);
     printf("Ini nilai x mod y : %d \n", x%y);
 
+    // With rill number
     float a=5, b=8;
     printf("Ini nilai a/b   :   %5.2f \n", a/b);
     printf("Ini nilai b/a   :   %5.2f \n", b/a);
