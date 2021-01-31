@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/DeretBilanganFibonacci.dir/latihan-uas/DeretBilanganFibonacci.c.o  -o DeretBilanganFibonacci 

@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/water-provider-program.dir/2-condition/water-provider-program.c.o  -o water-provider-program 

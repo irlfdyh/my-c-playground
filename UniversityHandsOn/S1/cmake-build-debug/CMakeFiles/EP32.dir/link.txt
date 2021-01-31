@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/EP32.dir/1-input-output/EP32.c.o  -o EP32 

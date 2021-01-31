@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/SimpleStruct.dir/6-struct-data-type/simple-struct.c.o  -o SimpleStruct 

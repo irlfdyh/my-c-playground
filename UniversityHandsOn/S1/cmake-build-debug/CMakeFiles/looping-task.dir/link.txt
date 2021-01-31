@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/looping-task.dir/3-looping/looping-task.c.o  -o looping-task 

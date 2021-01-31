@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/program-harga-pisang-goreng.dir/1-input-output/program-harga-pisang-goreng.c.o  -o program-harga-pisang-goreng 

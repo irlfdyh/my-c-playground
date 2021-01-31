@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/StudentScoreArray.dir/5-array/StudentScoreArray.c.o  -o StudentScoreArray 

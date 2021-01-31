@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/recursive-divider.dir/4-function/recursive-divider.c.o  -o recursive-divider 
