@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/SimpleArray.dir/5-array/SimpleArray.c.o  -o SimpleArray 

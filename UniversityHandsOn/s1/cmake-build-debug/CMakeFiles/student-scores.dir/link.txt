@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/student-scores.dir/3-looping/student-scores.c.o  -o student-scores 

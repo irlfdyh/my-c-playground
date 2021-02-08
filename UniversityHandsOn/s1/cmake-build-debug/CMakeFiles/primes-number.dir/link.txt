@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/primes-number.dir/3-looping/primes-number.c.o  -o primes-number 

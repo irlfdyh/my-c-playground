@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/college-student-score-program.dir/2-condition/college-student-score-program.c.o  -o college-student-score-program 

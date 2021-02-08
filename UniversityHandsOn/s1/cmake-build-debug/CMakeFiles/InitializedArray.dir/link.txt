@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/InitializedArray.dir/5-array/InitializedArray.c.o  -o InitializedArray 

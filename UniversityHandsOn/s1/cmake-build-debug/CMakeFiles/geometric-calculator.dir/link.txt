@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/geometric-calculator.dir/4-function/geometric-calculator.c.o  -o geometric-calculator 

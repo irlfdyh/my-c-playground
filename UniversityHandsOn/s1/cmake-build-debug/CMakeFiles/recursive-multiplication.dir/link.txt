@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/recursive-multiplication.dir/4-function/recursive-multiplication.c.o  -o recursive-multiplication 

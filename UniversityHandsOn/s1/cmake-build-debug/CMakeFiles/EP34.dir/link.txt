@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/EP34.dir/1-input-output/EP34.c.o  -o EP34 
