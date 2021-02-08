@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/DeretBilangan.dir/latihan-uas/DeretBilangan.c.o  -o DeretBilangan 

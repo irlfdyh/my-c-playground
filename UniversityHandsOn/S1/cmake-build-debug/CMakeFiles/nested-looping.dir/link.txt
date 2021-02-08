@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/nested-looping.dir/3-looping/nested-looping.c.o  -o nested-looping 

@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/travel-cost-estimate.dir/1-input-output/travel-cost-estimate.c.o  -o travel-cost-estimate 

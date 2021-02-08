@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/telecommunication-provider-program.dir/2-condition/telecommunication-provider-program.c.o  -o telecommunication-provider-program 

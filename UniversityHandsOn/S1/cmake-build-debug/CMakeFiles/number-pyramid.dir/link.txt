@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/number-pyramid.dir/3-looping/number-pyramid.c.o  -o number-pyramid 

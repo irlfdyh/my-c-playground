@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/basic-io.dir/1-input-output/basic-io.c.o  -o basic-io 
