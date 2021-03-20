@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-    int main() {
+int main() {
     int total_count, counter, counter1, swap_var;
 
     printf("How many number you want to input?\n");
