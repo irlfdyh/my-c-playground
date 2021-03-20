@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/program-menghitung-luas-persegi-panjang.dir/1-input-output/program-menghitung-luas-persegi-panjang.c.o  -o program-menghitung-luas-persegi-panjang 

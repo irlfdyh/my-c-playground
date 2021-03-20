@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/odds-number-row.dir/3-looping/odds-number-row.c.o  -o odds-number-row 

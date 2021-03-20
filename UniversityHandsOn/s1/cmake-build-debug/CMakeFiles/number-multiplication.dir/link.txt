@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/number-multiplication.dir/3-looping/number-multiplication.c.o  -o number-multiplication 

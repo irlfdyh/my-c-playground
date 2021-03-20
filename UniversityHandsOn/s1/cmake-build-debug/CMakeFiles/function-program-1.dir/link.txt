@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/function-program-1.dir/4-function/function-program-1.c.o  -o function-program-1 

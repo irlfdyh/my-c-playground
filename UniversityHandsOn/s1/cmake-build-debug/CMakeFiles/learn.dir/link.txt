@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/learn.dir/4-function/Try.c.o  -o learn 

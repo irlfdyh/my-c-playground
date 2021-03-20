@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/program-resep-nasi-goreng.dir/1-input-output/program-resep-nasi-goreng.c.o  -o program-resep-nasi-goreng 

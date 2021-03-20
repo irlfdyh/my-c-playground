@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/separate-number-type.dir/1-input-output/separate-number-type.c.o  -o separate-number-type 
