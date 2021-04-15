@@ -3,23 +3,31 @@
 
 int main()
 {
-   int num;
-   FILE *fptr;
+   int num, i = 0;
+   char anw;
+   FILE *fl;
 
    // use appropriate location if you are using MacOS or Linux
-   fptr = fopen("program.txt","w");
+   fl = fopen("fls/int-data.dat","wb");
 
-   if(fptr == NULL)
+   if(fl == NULL)
    {
-      printf("Error!");   
+      printf("File gagal diciptakan!");   
       exit(1);             
    }
 
-   printf("Enter num: ");
-   scanf("%d",&num);
+   do
+   {
+      printf("Enter num: ");
+      scanf("%d",&num);
+      putw(num, fl);
 
-   fprintf(fptr,"%d",num);
-   fclose(fptr);
+      printf("ada data lagi? ");
+      scanf(" %c", &anw);
+
+   } while (anw == 'y' || anw == 'Y');
+
+   fclose(fl);
 
    return 0;
 }
