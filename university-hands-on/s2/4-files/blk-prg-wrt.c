@@ -7,7 +7,7 @@ int main()
     FILE *fl;
     char ans;
     
-    struct clg_dt
+    struct bk_dt
     {
         char title[25];
         char author[20];
@@ -24,6 +24,8 @@ int main()
 
     do
     {
+        // printf("Judul Buku      = "); fgets(book.title, 25, stdin);
+        // printf("Nama Pengarang  = "); fgets(book.author, 20, stdin);
         printf("Judul Buku      = "); gets(book.title);
         printf("Nama Pengarang  = "); gets(book.author);
         printf("Jumlah Buku     = "); scanf("%d", &book.amount);
