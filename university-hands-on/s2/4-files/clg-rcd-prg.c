@@ -9,7 +9,8 @@
 void insert_file_content();
 void show_file_content();
 void update_file_content();
-void search_file_content();
+void search_content_by_record_number();
+void search_content_by_student_name();
 void file_menu();
 FILE *setup_file(char operation[]);
 
@@ -46,8 +47,9 @@ void file_menu()
         puts("1. Buat File");
         puts("2. Tampilkan isi File");
         puts("3. Edit isi file");
-        puts("4. Cari isi file");
-        puts("5. EXIT");
+        puts("4. Cari berdasarkan nomor record");
+        puts("5. Cari berdasarkan nama mahasiswa");
+        puts("6. EXIT");
         printf("PILIH [1..5] = ");
         scanf("%d", &choice);
 
@@ -83,17 +85,27 @@ void file_menu()
                 update_file_content();
                 break;
             }
-            case 4 : 
+            case 4 :
             {
                 if (setup_file("rb") == NULL)
                 {
                     puts("File tidak dapat dibuka!");
                     exit(1);
                 }
-                search_file_content();
+                search_content_by_record_number();
                 break;
             }
             case 5 : 
+            {
+                if (setup_file("rb") == NULL)
+                {
+                    puts("File tidak dapat dibuka!");
+                    exit(1);
+                }
+                search_content_by_student_name();
+                break;
+            }
+            case 6 : 
             {
                 puts("Keluar...");
                 exit(1);
@@ -180,7 +192,7 @@ void update_file_content()
 
 }
 
-void search_file_content()
+void search_content_by_record_number()
 {
     char reply;
 
@@ -209,4 +221,22 @@ void search_file_content()
     } while (reply == 'Y' || reply == 'y');
 
     fclose(fl);   
+}
+
+void search_content_by_student_name()
+{
+    char reply, keyword[20];
+
+    printf("Nama mahasiswa yang ingin dicari = ");
+    scanf("%s", &keyword);
+
+    while (fread(&mhs, sizeof(mhs), BLOCK_NUM, fl) == BLOCK_NUM)
+    {
+        if (strcmp(mhs.name, keyword) == 0)
+        {
+            printf("%-5s %-20s %2d\n", mhs.nim, mhs.name, mhs.final_score);
+        }
+    }
+
+    fclose(fl);
 }
