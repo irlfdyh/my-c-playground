@@ -21,3 +21,4 @@ void close_file()
 {
     fclose(fl);
 }
+
