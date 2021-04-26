@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include "transaction-table.h"
-#include "transaction-file.h"
 
 /*
     transaction data
@@ -18,7 +17,8 @@ void show_new_data();
 
 int main()
 {
-    starter_program();
+   starter_program();  
+    // print_size();
 }
 
 void starter_program()
@@ -56,14 +56,12 @@ void operation_processor(int option)
         }
         case 2 : 
         {
-            puts("Melihat data transaksi");
-            table_printer();
+            show_all_data();
             break;
         }
         case 3 : 
         {
             puts("Melihat data transaksi berdasarkan tanggal");
-            table_printer();
             break;
         }
         default : 
@@ -99,20 +97,26 @@ void insert_data()
 
     product.price = price_holder;
     product.amount = amount_holder;
-    product.total_price = price_holder * amount_holder;
+    product.price_total = price_holder * amount_holder;
 
     save_transaction_data(product);
+    increase_record_total();
     
 }
 
 void show_new_data()
 {
-    
+
 }
 
 void show_all_data()
 {
-
+    if (configure_file("rb") == NULL)
+    {
+        puts("Gagal membuka file");
+        exit(1);
+    }
+    print_transaction_data();
 }
 
 void show_data_by_date()

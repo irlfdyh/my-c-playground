@@ -1,5 +1,10 @@
-struct product_data
+#ifndef TRANSACTION_MODEL_H
+#define TRANSACTION_MODEL_H
+
+struct Product
 {
     char date[12], name[25];
-    int price, amount, total_price;
+    int price, amount, price_total;
 } product;
+
+#endif
