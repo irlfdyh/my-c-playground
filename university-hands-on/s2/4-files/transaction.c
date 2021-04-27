@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 #include "transaction-table.h"
 
 /*
@@ -13,7 +14,7 @@ void operation_processor(int code);
 void insert_data();
 void show_all_data();
 void show_data_by_date();
-void show_new_data();
+void throw_exception();
 
 int main()
 {
@@ -33,14 +34,14 @@ void operation_menu()
     puts("1. Menambahkan data transaksi");
     puts("2. Melihat semua data transaksi");
     puts("3. Melihat data transaksi berdasarkan tanggal");
+    puts("0. Keluar");
     operation_determiner();
 }
 
 void operation_determiner()
 {
-    int option;
-    printf("Pilihan : "); scanf("%d", &option);
-
+    short int option;
+    printf("Pilihan : "); scanf("%hd", &option);
     operation_processor(option);
 }
 
@@ -49,6 +50,12 @@ void operation_processor(int option)
     puts("");
     switch (option)
     {
+        case 0 : 
+        {
+            puts("Keluar.");
+            exit(1);
+            break;
+        }
         case 1 : 
         {
             insert_data();
@@ -61,12 +68,12 @@ void operation_processor(int option)
         }
         case 3 : 
         {
-            puts("Melihat data transaksi berdasarkan tanggal");
+           show_data_by_date();
             break;
         }
         default : 
         {
-            puts("Pilihan tidak valid");
+            puts("Pilihan tidak valid!!");
             puts("Ulangi penginputan\n");
             operation_determiner();
             break;
@@ -77,12 +84,11 @@ void operation_processor(int option)
 void insert_data()
 {
 
-    int price_holder = 0, amount_holder = 0;
+    int price_holder, amount_holder;
 
     if (configure_file("a") == NULL)
     {
-        puts("Gagal membuka File");
-        exit(1);
+        throw_exception();
     }
 
     puts("Masukkan data transaksi");
@@ -100,26 +106,31 @@ void insert_data()
     product.price_total = price_holder * amount_holder;
 
     save_transaction_data(product);
-    increase_record_total();
-    
-}
-
-void show_new_data()
-{
-
+    puts("\nOK\n");
+    operation_menu();
 }
 
 void show_all_data()
 {
     if (configure_file("rb") == NULL)
     {
-        puts("Gagal membuka file");
-        exit(1);
+        throw_exception();
     }
     print_transaction_data();
+    operation_menu();
 }
 
 void show_data_by_date()
 {
+    if (configure_file("rb") == NULL)
+    {
+        throw_exception();
+    }
 
+}
+
+void throw_exception()
+{
+    puts("Data belum tersedia, coba untuk memasukkan data terlebih dahulu di menu 1.\n");
+    operation_menu();
 }

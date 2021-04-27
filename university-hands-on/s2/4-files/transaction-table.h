@@ -16,6 +16,16 @@ void print_table_header()
     printf("--------------+---------------------------+--------------+--------+--------------\n");
 }
 
+void print_record()
+{
+    printf("Tanggal     = %s\n", product.date);    
+    printf("Nama Produk = %s\n", product.name);    
+    printf("Harga       = %d\n", product.price);
+    printf("Jumlah      = %d\n", product.amount);
+    printf("Total Harga = %d\n", product.price_total);
+    printf("\n");
+}
+
 void print_transaction_data()
 {
     int i = 0;
@@ -68,16 +78,6 @@ void print_table_record(int position)
     // mover(position, 68);
     // printf("%d", product.price_total);
 
-}
-
-void print_record()
-{
-    printf("Tanggal     = %s\n", product.date);    
-    printf("Nama Produk = %s\n", product.name);    
-    printf("Harga       = %d\n", product.price);
-    printf("Jumlah      = %d\n", product.amount);
-    printf("Total Harga = %d\n", product.price_total);
-    printf("\n");
 }
 
 // void print_size()
