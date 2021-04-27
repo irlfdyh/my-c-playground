@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <string.h>
 #include "transaction-table.h"
 
 void starter_program();
@@ -18,7 +17,7 @@ int main()
 
 void starter_program()
 {   
-    puts("PROGRAM PENCATATAN TRANSAKSI\n");
+    puts("\nPROGRAM PENCATATAN TRANSAKSI\n");
     operation_menu();
 }
 
@@ -126,19 +125,25 @@ void show_data_by_date()
 
     printf("Masukkan Tanggal (12-Apr-2021) = ");
     scanf("%s", q);
+    puts("");
 
+    print_table_header();
     while (read_transaction_data() == 1)
     {
         if (strcmp(product.date, q) == 0)
         {
-            print_record();
+            print_table_record();
             fc++;
         }
     }
 
     if (fc == 0)
     {
-        puts("\nData tidak ditemukan\n");
+        puts("Data tidak ditemukan\n");
+    }
+    else
+    {
+        puts("");
     }
 
     operation_menu();
