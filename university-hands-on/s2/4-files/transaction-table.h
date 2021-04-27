@@ -8,11 +8,6 @@
 #define AMOUNT_LIMIT 6
 #define TOTAL_LIMIT 11
 
-/**
-    cp = 1
-    cp += 13 - 11 = 2
-**/
-
 int nms(int number);
 void h_mover(int hs);
 
@@ -87,8 +82,7 @@ void print_transaction_data()
 
 void h_mover(int hs)
 {
-    int hp;
-    for (hp = 0; hp < hs; hp++)
+    for (int hp = 0; hp < hs; hp++)
     {
         printf(" ");
     }
