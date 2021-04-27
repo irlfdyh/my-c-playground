@@ -2,11 +2,6 @@
 #include <string.h>
 #include "transaction-table.h"
 
-/*
-    transaction data
-    date, product name, price, amount, total price.
-*/
-
 void starter_program();
 void operation_menu();
 void operation_determiner();
@@ -18,8 +13,7 @@ void throw_exception();
 
 int main()
 {
-   starter_program();  
-    // print_size();
+   starter_program();
 }
 
 void starter_program()
@@ -68,7 +62,7 @@ void operation_processor(int option)
         }
         case 3 : 
         {
-           show_data_by_date();
+            show_data_by_date();
             break;
         }
         default : 
@@ -84,7 +78,7 @@ void operation_processor(int option)
 void insert_data()
 {
 
-    int price_holder, amount_holder;
+    int price_holder = 0, amount_holder = 0;
 
     if (configure_file("a") == NULL)
     {
@@ -93,13 +87,13 @@ void insert_data()
 
     puts("Masukkan data transaksi");
     printf("Tanggal transaksi   : ");
-    scanf("%s", product.date); fflush(stdin);
+    scanf("%s", product.date);
     printf("Nama Produk         : ");
-    scanf("%s", product.name); fflush(stdin);
+    scanf("%s", product.name);
     printf("Harga Produk        : ");
-    scanf("%d", &price_holder); fflush(stdin);
+    scanf("%d", &price_holder);
     printf("Jumlah Produk       : ");
-    scanf("%d", &amount_holder); fflush(stdin);
+    scanf("%d", &amount_holder);
 
     product.price = price_holder;
     product.amount = amount_holder;
@@ -122,10 +116,32 @@ void show_all_data()
 
 void show_data_by_date()
 {
+    char q[25];
+    int fc = 0;
+
     if (configure_file("rb") == NULL)
     {
         throw_exception();
     }
+
+    printf("Masukkan Tanggal (12-Apr-2021) = ");
+    scanf("%s", q);
+
+    while (read_transaction_data() == 1)
+    {
+        if (strcmp(product.date, q) == 0)
+        {
+            print_record();
+            fc++;
+        }
+    }
+
+    if (fc == 0)
+    {
+        puts("\nData tidak ditemukan\n");
+    }
+
+    operation_menu();
 
 }
 
