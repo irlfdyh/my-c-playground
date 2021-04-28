@@ -5,11 +5,12 @@ void starter_program();
 void operation_menu();
 void operation_determiner();
 void operation_processor(int code);
-void show_available_file();
+int show_available_file();
 void opr_create_file();
 void opr_insert_file();
 void opr_read_file_content();
 void opr_manipulate_file();
+void throw_exception();
 
 int main()
 {
@@ -63,7 +64,7 @@ void operation_processor(int option)
         }
         case 3 : 
         {
-            // manipulate file here
+            opr_manipulate_file();
             break;
         }
         default : 
@@ -110,20 +111,80 @@ void opr_insert_file()
     }
     while (dt != '.');
     close_file_content();
+    operation_menu();
 }
 
 void opr_read_file_content()
 {
-    show_available_file();
+    char fq[100], rst;
+    int status, disc_status;
+
+    disc_status = show_available_file();
+
+    if (disc_status == 0)
+    {
+        puts("File belum tersedia, coba untuk membuat file di menu 1.\n");
+    }
+    else
+    {
+        printf("\nMasukkan nama file yang ingin dibaca = ");
+        scanf("%s", fq);
+
+        status = configure_file_content(fq, "r");
+
+        if (status == SUCCESS)
+        {
+            while ((rst = read_file_content()) != EOF)
+            {
+                putchar(rst);
+            }
+            puts("\n");
+        }
+        else if (status == FAILED)
+        {
+            throw_exception();
+        }
+    }
+    operation_menu();
 }
 
 void opr_manipulate_file()
 {
+    char fq[100], rst;
+    int status, disc_status;
 
+    disc_status = show_available_file();
+
+    if (disc_status == 0)
+    {
+        puts("File belum tersedia, coba untuk membuat file di menu 1.\n");
+    }
+    else
+    {
+        printf("\nMasukkan nama file yang akan dimanipulasi = ");
+        scanf("%s", fq);
+
+        status = configure_file_content(fq, "r");
+
+        if (status == SUCCESS)
+        {
+            while ((rst = read_file_content()) != EOF)
+            {
+                putchar(toupper(rst));
+            }
+            puts("\n");
+        }
+        else if (status == FAILED)
+        {
+            throw_exception();
+        }
+    }
+    operation_menu();
 }
 
-void show_available_file()
+int show_available_file()
 {
+    int file_discovery = 0;
     if (configure_file_registry("rb") == NULL)
     {
         // Handle something
@@ -133,7 +194,14 @@ void show_available_file()
         while (retretive_registered_file() == 1)
         {
             printf("%s\n", bfr);
+            file_discovery++;
         }
         close_file_registry();
     }
+    return file_discovery;
+}
+
+void throw_exception()
+{
+    puts("\nterjadi masalah saat melakukan aksi\n");
 }
