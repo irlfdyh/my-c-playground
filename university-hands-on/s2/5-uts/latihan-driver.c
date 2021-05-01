@@ -8,16 +8,20 @@
 
 void get_user_input();
 void print_user_input();
+void insert_sorted_number();
+void read_sorted_number();
 int check_condition();
 void throw_exception();
 
 char answ;
-int cntr;
+int cntr, num[10], arr_size;
 
 int main()
 {
     get_user_input();
     print_user_input();
+    insert_sorted_number();
+    read_sorted_number();
     return 0;
 }
 
@@ -45,7 +49,7 @@ void get_user_input()
 
 void print_user_input()
 {
-    int val, i;
+    int val, i = 0;
     if (configure_file(ABS_FILE, OPR_READ) == NULL)
     {
         throw_exception();
@@ -54,9 +58,46 @@ void print_user_input()
     while ((val = read_abs_file()) != EOF)
     {
         printf("%d ", val);
+        num[i] = val;
+        i++;
     }
+    arr_size = i;
     printf("\n");
     close_file(ABS_FILE);
+}
+
+void insert_sorted_number()
+{
+    if (configure_file(SRT_FILE, OPR_WRITE) == NULL)
+    {
+        throw_exception();
+    }
+    
+    sort_number(num, arr_size);
+
+    for (int i = 0; i < arr_size; i++)
+    {
+        input_srt_file(num[i]);
+    }
+
+    close_file(SRT_FILE);
+}
+
+void read_sorted_number()
+{
+    int val;
+    if (configure_file(SRT_FILE, OPR_READ) == NULL)
+    {
+        throw_exception();
+    }
+
+    printf("\nAngka yang telah diurutkan secara descending :\n");
+    while((val = read_srt_file()) != EOF)
+    {
+        printf("%d ", val);
+    }
+    printf("\n");
+    close_file(SRT_FILE);
 }
 
 int check_condition()
