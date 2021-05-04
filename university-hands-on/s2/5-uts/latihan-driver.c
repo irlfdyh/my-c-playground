@@ -12,6 +12,7 @@ void insert_sorted_number();
 void read_sorted_number();
 int check_condition();
 void throw_exception();
+void require_search_number();
 
 char answ;
 int cntr, num[10], arr_size;
@@ -22,6 +23,7 @@ int main()
     print_user_input();
     insert_sorted_number();
     read_sorted_number();
+    require_search_number();
     return 0;
 }
 
@@ -109,4 +111,23 @@ void throw_exception()
 {
     puts("Ada permasalahan saat mengkonfigurasi file");
     exit(1);
+}
+
+void require_search_number()
+{
+    int q = 0, *rat = 0;
+
+    printf("\nMasukkan angka yang ingin dicari : ");
+    scanf("%d", &q);
+
+    int idx = search_number(num, 0, arr_size, q, &rat);
+
+    if (idx != NOT_FOUND)
+    {
+        printf("\nAngka ditemukan pada index ke %d, dengan perbandingan sebanyak %dx\n", idx, rat);
+    }
+    else
+    {
+        printf("\nAngka tidak ditemukan!!\n");
+    }
 }
